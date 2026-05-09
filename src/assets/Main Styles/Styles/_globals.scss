@@ -1,0 +1,99 @@
+$desctop-above: 1281px;
+$desctop: 1280px;
+
+$tablet-above: 1024px;
+$tablet: 1023px;
+
+$mobile-above: 768px;
+$mobile: 767px;
+
+$mobile-s-above: 481px;
+$mobile-s: 480px;
+
+@mixin desctop-above {
+    @media (min-width: $desctop-above) {
+        @content;
+    }
+}
+
+@mixin desctop {
+    @media (max-width: $desctop) {
+        @content;
+    }
+}
+
+@mixin tablet-above {
+    @media (min-width: $tablet-above) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (max-width: $tablet) {
+        @content;
+    }
+}
+
+@mixin mobile-above {
+    @media (min-width: $mobile-above) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width: $mobile) {
+        @content;
+    }
+}
+
+@mixin mobile-s-above {
+    @media (min-width: $mobile-s-above) {
+        @content;
+    }
+}
+
+@mixin mobile-s {
+    @media (max-width: $mobile-s) {
+        @content;
+    }
+}
+
+@mixin hover {
+    @media (hover:hover) {
+        &:hover {
+            @content;
+        }
+    }
+
+    @media (hover: none) {
+        &:active {
+            @content;
+        }
+    }
+}
+
+body {
+    font-family: var(--font-family-base);
+    font-weight: 400;
+    line-height: 1.28;
+    color: var(--color-light);
+    background-color: var(--color-dark);
+    height: 1510px;
+
+    @include mobile-s{
+        height: 2530px;
+    }
+}
+
+a,
+button,
+input,
+textarea,
+svg * {
+    transition-duration: var(--transition-duration);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}

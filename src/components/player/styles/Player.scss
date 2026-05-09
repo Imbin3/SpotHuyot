@@ -1,0 +1,191 @@
+$desctop-above: 1281px;
+$desctop: 1280px;
+
+$tablet-above: 1024px;
+$tablet: 1023px;
+
+$mobile-above: 768px;
+$mobile: 767px;
+
+$mobile-s-above: 481px;
+$mobile-s: 480px;
+
+@mixin desctop-above {
+    @media (min-width: $desctop-above) {
+        @content;
+    }
+}
+
+@mixin desctop {
+    @media (max-width: $desctop) {
+        @content;
+    }
+}
+
+@mixin tablet-above {
+    @media (min-width: $tablet-above) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (max-width: $tablet) {
+        @content;
+    }
+}
+
+@mixin mobile-above {
+    @media (min-width: $mobile-above) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width: $mobile) {
+        @content;
+    }
+}
+
+@mixin mobile-s-above {
+    @media (min-width: $mobile-s-above) {
+        @content;
+    }
+}
+
+@mixin mobile-s {
+    @media (max-width: $mobile-s) {
+        @content;
+    }
+}
+
+@mixin hover {
+    @media (hover:hover) {
+        &:hover {
+            @content;
+        }
+    }
+
+    @media (hover: none) {
+        &:active {
+            @content;
+        }
+    }
+}
+
+
+
+
+.player {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px;
+    border-radius: 30px;
+    position: fixed;
+    bottom: 0;
+    right: 50%;
+    translate: 50%;
+    background-color: var(--color-blue-alt);
+
+    @include mobile-s{
+        column-gap: 40px;
+    }
+
+    &__info {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 40px;
+
+        @include mobile-s{
+            flex-direction: column;
+            row-gap: 20px;
+        }
+
+        &-img {
+            border-radius: 20px;
+
+            @include mobile-s{
+                border-radius: 10px;
+            }
+
+            &-wrapper {
+                padding: 10px;
+                background-color: var(--color-blue);
+                border-radius: 20px;
+                box-shadow: 1px 1px 10px var(--color-blue);
+
+                @include mobile-s{
+                    width: 100px;
+                    padding: 10px;
+                    border-radius: 10px;
+                }
+            }
+        }
+
+        &-text {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            background-color: var(--color-blue);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 1px 1px 10px var(--color-blue);
+
+            @include mobile{
+                font-size: 14px;
+            }
+        }
+    }
+
+    &__controls {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 40px;
+
+        @include mobile{
+            flex-direction: column;
+            row-gap: 40px;
+        }
+
+        &-inputs {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: center;
+            background-color: var(--color-blue);
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 1px 1px 10px var(--color-blue);
+        }
+
+        &-volume {
+            width: 100px;
+        }
+
+        &-play {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            aspect-ratio: 1;
+            border: none;
+            outline: none;
+            background-color: var(--color-blue);
+            padding: 7px;
+            border-radius: 10px;
+
+            @include mobile-s{
+                width: 100px;
+            }
+
+            & path {
+                fill: var(--color-light);
+            }
+        }
+    }
+}

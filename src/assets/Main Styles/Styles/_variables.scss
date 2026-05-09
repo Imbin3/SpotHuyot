@@ -1,0 +1,21 @@
+:root{
+  --color-dark: #191A23;
+  --color-light: #FFFFFF;
+  --color-accent: #0DCF7E;
+  --color-accent-alt: #097361;
+  --color-sky: #13B0BE;
+  --color-blue: #074362;
+  --color-blue-alt: #1362CF;
+
+  --border: 1px solid var(--color-dark);
+  --border-radius: 14px;
+  --border-radius-small: 7px;
+  --border-radius-large: 45px;
+
+  --shadow: 0 5px 0 0 var(--color-dark);
+
+  --font-family-base: 'Nunito Sans', sans-serif;
+
+  --container-width: 1440px;
+  --container-padding-x: 20px;
+}
